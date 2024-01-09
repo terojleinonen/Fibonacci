@@ -1,8 +1,6 @@
 #include <iostream>
 #ifndef printFibonacciNumbersOnScreen_hpp
 #define printFibonacciNumbersOnScreen_hpp
-using customInt = unsigned long long int;
-
 namespace printFibonacciNumbersOnScreenNamespace{
     class printFibonacciNumbersOnScreenClass{
         private:
@@ -16,20 +14,20 @@ namespace printFibonacciNumbersOnScreenNamespace{
                 std::cout << element <<std::endl;
             }
            
-            customInt add(customInt x, customInt y){
+            uint64_t add(uint64_t x, uint64_t y){
                 return (x + y);
             }
 
         public:        
         void printFibonacciNumbersOnScreenFunction(int MAX){
-            customInt newNumber = 1;
-            customInt oldNumber = 0;
+            uint64_t newNumber = 1;
+            uint64_t oldNumber = 0;
         
             for (int i = 0; i < MAX; ++i) {        
                 if ( i == 0)
-                    printOnScreen(0);
+                    printOnScreen(oldNumber);
                 else {
-                    customInt nextNumber = add(oldNumber, newNumber);
+                    uint64_t nextNumber = add(oldNumber, newNumber);
                     printOnScreen(nextNumber);
                     swapElements(oldNumber, newNumber, nextNumber);
                     }
