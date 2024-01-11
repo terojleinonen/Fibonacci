@@ -1,8 +1,8 @@
 #include <iostream>
 #ifndef printFibonacciNumbersOnScreen_hpp
 #define printFibonacciNumbersOnScreen_hpp
-namespace printFibonacciNumbersOnScreenNamespace{
-    class printFibonacciNumbersOnScreenClass{
+namespace printFibonacciNamespace{
+    class printFibonacciClass{
         private:            
             template<typename U>
             void printOnScreen(U element){
@@ -10,21 +10,22 @@ namespace printFibonacciNumbersOnScreenNamespace{
             }
         public:        
         void printFibonacciNumbersOnScreenFunction(int quantity){
-            uint64_t newNumber = 1;
-            uint64_t oldNumber = 0;
+            uint64_t newValue = 1;
+            uint64_t oldValue = 0;
         
             for (int i = 0; i < quantity; ++i) {        
-                if ( i == 0)
-                    printOnScreen(oldNumber);
+                if ( i < 2){
+                    printOnScreen(oldValue);
+                    std::swap(oldValue, newValue);
+                    }
                 else {
-                    uint64_t nextNumber = oldNumber + newNumber;
-                    printOnScreen(nextNumber);
-                    std::swap(oldNumber, newNumber);
-                    std::swap(newNumber, nextNumber);
+                    oldValue = oldValue + newValue;
+                    printOnScreen(oldValue);
+                    std::swap(oldValue, newValue);
                     }
                 }        
             }
-            ~printFibonacciNumbersOnScreenClass(){
+            ~printFibonacciClass(){
                 std::cout <<"destructor called!"<<std::endl;
             }
     };

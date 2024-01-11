@@ -1,8 +1,8 @@
 #include "printFibonacciNumbersOnScreen.hpp"
 
 int main(/*int argc, const char * argv[]*/) {
-    int quantity = 100;
-    printFibonacciNumbersOnScreenNamespace::printFibonacciNumbersOnScreenClass justPrint;
+    int quantity = 20;
+    printFibonacciNamespace::printFibonacciClass justPrint;
     justPrint.printFibonacciNumbersOnScreenFunction(quantity);
     return 0;
 }
