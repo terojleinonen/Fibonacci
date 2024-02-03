@@ -2,7 +2,6 @@
 
 int main(/*int argc, const char * argv[]*/) {
     int quantity = 20;
-    printFibonacciNamespace::printFibonacciClass justPrint;
-    justPrint.printFibonacciNumbersOnScreenFunction(quantity);
+    countFibonacciNumbers::printOnScreen(quantity);
     return 0;
 }
