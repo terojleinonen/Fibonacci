@@ -7,10 +7,12 @@ namespace countFibonacciNumbers{
         public:
 
         void recursivePrintOnSCreen(int quantity, uint64_t newValue = 1, uint64_t oldValue = 0){
-            newValue = newValue + oldValue;
-            std::swap(oldValue,newValue);
-            std::cout << newValue << std::endl;
-            if( quantity > 0) recursivePrintOnSCreen(--quantity, newValue, oldValue);    
+            if( quantity > 0) {
+                newValue = newValue + oldValue;
+                std::swap(oldValue,newValue);
+                std::cout << newValue << std::endl;
+                recursivePrintOnSCreen(--quantity, newValue, oldValue);
+            }    
         }
 
         void containerPrintOnSCreen(int quantity){
