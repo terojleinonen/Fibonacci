@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #ifndef printFibonacciNumbersOnScreen_hpp
@@ -8,6 +9,7 @@ namespace countFibonacciNumbers{
 
         void recursivePrintOnSCreen(int quantity, uint64_t newValue = 1, uint64_t oldValue = 0){
             if( quantity > 0) {
+            std::cout<<__PRETTY_FUNCTION__<<std::endl; //Prints function name and arguments.
                 newValue = newValue + oldValue;
                 std::swap(oldValue,newValue);
                 std::cout << newValue << std::endl;
@@ -17,7 +19,7 @@ namespace countFibonacciNumbers{
 
         void containerPrintOnSCreen(int quantity){
             std::vector<uint64_t> fibonacciNumbers;
-
+            std::cout<<__PRETTY_FUNCTION__<<std::endl;
             for(int i = 0; i < quantity; ++i){
                 if(i < 2){
                     fibonacciNumbers.push_back(i);
@@ -32,6 +34,7 @@ namespace countFibonacciNumbers{
         void printOnScreen(int quantity){
             uint64_t oldValue = 0;
             uint64_t newValue = 1;
+            std::cout<<__PRETTY_FUNCTION__<<std::endl;
         
             for (int i = 0; i < quantity; ++i) {         
                 newValue = newValue + oldValue;
