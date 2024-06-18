@@ -8,43 +8,27 @@ namespace countFibonacciNumbers{
         public:
 
         void recursivePrintOnSCreen(int quantity, uint64_t newValue = 1, uint64_t oldValue = 0){
-            if( quantity > 0) {
-            std::cout<<__PRETTY_FUNCTION__<<std::endl; //Prints function name and arguments.
-                newValue = newValue + oldValue;
-                std::swap(oldValue,newValue);
-                std::cout << newValue << std::endl;
-                recursivePrintOnSCreen(--quantity, newValue, oldValue);
-            }    
+            std::cout << oldValue << std::endl;
+            if( quantity > 0) recursivePrintOnSCreen(--quantity, newValue + oldValue, newValue);  
         }
 
         void containerPrintOnSCreen(int quantity){
             std::vector<uint64_t> fibonacciNumbers;
-            std::cout<<__PRETTY_FUNCTION__<<std::endl;
-            for(int i = 0; i < quantity; ++i){
-                if(i < 2){
-                    fibonacciNumbers.push_back(i);
-                    std::cout << fibonacciNumbers[i] << std::endl;
-                } else {
-                    fibonacciNumbers.push_back(fibonacciNumbers[i-1] + fibonacciNumbers[i-2]);
-                    std::cout << fibonacciNumbers[i] << std::endl;
-                }
-            }
+            for(int i = 0; i < quantity; ++i) (i < 2) ? fibonacciNumbers.push_back(i): fibonacciNumbers.push_back(fibonacciNumbers[i-1] + fibonacciNumbers[i-2]);
+            for (auto &&number : fibonacciNumbers) std::cout << number << std::endl;       
         }
             
         void printOnScreen(int quantity){
             uint64_t oldValue = 0;
             uint64_t newValue = 1;
-            std::cout<<__PRETTY_FUNCTION__<<std::endl;
         
             for (int i = 0; i < quantity; ++i) {         
                 newValue = newValue + oldValue;
-                std::swap(oldValue, newValue);
+                std::swap(oldValue , newValue);
                 std::cout << newValue << std::endl;  
             }
         }
-        ~solutions(){
-            std::cout << "Destructor called!" << std::endl;
-        }
+        ~solutions(){}
     };
 }
 #endif
